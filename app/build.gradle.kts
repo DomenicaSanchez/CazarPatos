@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.sanchez.domenica.cazarpatos"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -46,4 +46,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.security.crypto)
+    implementation(libs.androidx.datastore.preferences)
 }
