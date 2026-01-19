@@ -10,6 +10,11 @@ import android.media.MediaPlayer
 import android.widget.Button
 import android.widget.EditText
 import android.widget.CheckBox
+import com.sanchez.domenica.cazarpatos.ExternalFileManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+
 
 
 class LoginActivity : AppCompatActivity() {
@@ -20,6 +25,8 @@ class LoginActivity : AppCompatActivity() {
     lateinit var buttonNewUser:Button
     lateinit var checkBoxRecordarme: CheckBox
     lateinit var mediaPlayer: MediaPlayer
+    lateinit var auth: FirebaseAuth;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -37,9 +44,8 @@ class LoginActivity : AppCompatActivity() {
         // manejadorArchivo = InternalFileManager(this)
 
         // Parte 5 - Almacenamiento Externo
+        auth = Firebase.auth
         manejadorArchivo = ExternalFileManager(this)
-
-
         editTextEmail = findViewById(R.id.editTextEmail)
         editTextPassword = findViewById(R.id.editTextPassword)
         buttonLogin = findViewById(R.id.buttonLogin)
@@ -90,6 +96,13 @@ class LoginActivity : AppCompatActivity() {
             return false
         }
         return true
+    }
+
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        //updateUI(currentUser)
     }
 
     private fun LeerDatosDePreferencias(){

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "393649423647",
+    "firebase_url": "https://proyectocazarpatos2025bds-default-rtdb.firebaseio.com",
+    "project_id": "proyectocazarpatos2025bds",
+    "storage_bucket": "proyectocazarpatos2025bds.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393649423647:android:358fd13017118a73a39c2a",
+        "android_client_info": {
+          "package_name": "com.sanchez.domenica.cazarpatos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcpuKQpHAI5IY5njQlboUyL_gUX8ZrLIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,22 +14,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CazarPatos.Personalizado">
-
-        <!-- LoginActivity is now correctly set as the launcher activity -->
         <activity
-            android:name=".LoginActivity"
-            android:exported="true">
+            android:name=".RankingActivity"
+            android:exported="false" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+
+        <!-- LoginActivity is now correctly set as the launcher activity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
-
+            android:exported="false"></activity>
     </application>
 
 </manifest>
