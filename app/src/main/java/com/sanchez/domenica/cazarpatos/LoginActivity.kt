@@ -11,10 +11,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.CheckBox
 import com.sanchez.domenica.cazarpatos.ExternalFileManager
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-
+import com.google.firebase.auth.auth
+import android.util.Log
+import android.widget.Toast
 
 
 class LoginActivity : AppCompatActivity() {
@@ -62,10 +63,11 @@ class LoginActivity : AppCompatActivity() {
             //Guardar datos en preferencias.
             GuardarDatosEnPreferencias()
             //Si pasa validación de datos requeridos, ir a pantalla principal
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra(EXTRA_LOGIN, email)
-            startActivity(intent)
-            finish()
+            //val intent = Intent(this, MainActivity::class.java)
+            //intent.putExtra(EXTRA_LOGIN, email)
+            //startActivity(intent)
+            //finish()
+            AutenticarUsuario(email, clave)
         }
         buttonNewUser.setOnClickListener{
 
@@ -74,6 +76,24 @@ class LoginActivity : AppCompatActivity() {
         mediaPlayer=MediaPlayer.create(this, R.raw.title_screen)
         mediaPlayer.start()
 
+    }
+
+    fun AutenticarUsuario(email:String, password:String){
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    Log.d(EXTRA_LOGIN, "signInWithEmail:success")
+                    //Si pasa validación de datos requeridos, ir a pantalla principal
+                    val intencion = Intent(this, MainActivity::class.java)
+                    intencion.putExtra(EXTRA_LOGIN, auth.currentUser!!.email)
+                    startActivity(intencion)
+                    //finish()
+                } else {
+                    Log.w(EXTRA_LOGIN, "signInWithEmail:failure", task.exception)
+                    Toast.makeText(baseContext, task.exception!!.message,
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
 
