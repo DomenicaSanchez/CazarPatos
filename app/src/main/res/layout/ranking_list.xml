@@ -1,43 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="16dp"
+    android:layout_marginVertical="4dp">
+
+    <!-- Posición: Alineado a la izquierda -->
     <TextView
         android:id="@+id/textViewPosicion"
-        android:layout_width="24dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/press_start_2p"
-        android:textSize="12sp"
-        android:text="#"
-        android:textAllCaps="false"
-        android:textIsSelectable="false"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#DE000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/textViewPatosCazados"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/press_start_2p"
-        android:textSize="12sp"
-        android:gravity="center"
-        android:text="@string/text_ducks"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewPosicion"
-        app:layout_constraintStart_toEndOf="@+id/textViewPosicion"
-        app:layout_constraintTop_toTopOf="@+id/textViewPosicion" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1." />
+
+    <!-- Nombre del Jugador: Ocupa el espacio flexible -->
     <TextView
         android:id="@+id/textViewUsuario"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:fontFamily="@font/press_start_2p"
-        android:textSize="12sp"
-        android:text="@string/text_player"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewPatosCazados"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewPatosCazados"
-        app:layout_constraintTop_toTopOf="@+id/textViewPatosCazados" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
+        android:textColor="#DE000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/container_score"
+        app:layout_constraintStart_toEndOf="@+id/textViewPosicion"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nombre del Jugador" />
 
+    <!-- Contenedor de Patos y Cantidad: Alineado a la derecha -->
+    <LinearLayout
+        android:id="@+id/container_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/duck"
+            app:tint="#8A000000" />
+
+        <TextView
+            android:id="@+id/textViewPatosCazados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="#BF000000"
+            android:textSize="16sp"
+            tools:text="99" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

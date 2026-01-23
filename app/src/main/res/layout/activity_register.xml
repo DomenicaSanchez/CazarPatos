@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_game"
+    android:padding="16dp"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/title" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="@font/press_start_2p"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColor="@android:color/white"
+        android:textColorLink="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewLogo"
+        app:layout_constraintStart_toStartOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="@font/press_start_2p"
+        android:hint="Password"
+        android:inputType="numberPassword"
+        android:minHeight="48dp"
+        android:textColor="@android:color/white"
+        android:textColorLink="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="@font/press_start_2p"
+        android:hint="Confirm password"
+        android:inputType="numberPassword"
+        android:minHeight="48dp"
+        android:textColor="@android:color/white"
+        android:textColorLink="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="@font/pixel"
+        android:text="Sign up"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextConfirmPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
+
+    <Button
+        android:id="@+id/buttonBackToLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimaryLight"
+        android:fontFamily="@font/pixel"
+        android:text="Back to login"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSignUp"
+        app:layout_constraintStart_toStartOf="@+id/buttonSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

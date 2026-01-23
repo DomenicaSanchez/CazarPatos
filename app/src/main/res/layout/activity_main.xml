@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_game"
-    android:padding="32dp"
+    android:paddingTop="100dp"
     tools:context=".MainActivity">
+
     <ImageView
         android:id="@+id/imageViewDuck"
         android:layout_width="100dp"

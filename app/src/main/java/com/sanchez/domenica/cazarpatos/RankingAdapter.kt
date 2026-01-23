@@ -41,6 +41,8 @@ class RankingAdapter(private val dataSet: ArrayList<Player>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is ViewHolderHeader){
             holder.textViewPosicion.text = "#"
+            holder.textViewPatosCazados.text = "Patos"
+            holder.textViewUsuario.text = "Jugador"
             holder.textViewPosicion.paintFlags = holder.textViewPosicion.paintFlags or Paint.UNDERLINE_TEXT_FLAG
             holder.textViewPosicion.setTextColor(holder.textViewPosicion.context.getColor( R.color.colorPrimaryDark))
             holder.textViewPatosCazados.paintFlags = holder.textViewPatosCazados.paintFlags or Paint.UNDERLINE_TEXT_FLAG

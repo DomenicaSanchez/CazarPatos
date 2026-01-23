@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="#F0EAD6">
+
+        <!-- Contenedor para el icono y el título -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/dialog_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/duck" />
+
+            <TextView
+                android:id="@+id/dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="¡Fin del juego!"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            tools:text="¡Felicidades!\nHas conseguido cazar 15 patos" />
+
+        <!-- Contenedor para los botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btn_close"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cerrar"
+                android:backgroundTint="#F44336"
+                android:textColor="@android:color/white"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btn_restart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Reiniciar"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="8dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

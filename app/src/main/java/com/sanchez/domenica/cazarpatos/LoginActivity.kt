@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.CheckBox
 import com.sanchez.domenica.cazarpatos.ExternalFileManager
+import com.sanchez.domenica.cazarpatos.RegisterActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -70,7 +71,8 @@ class LoginActivity : AppCompatActivity() {
             AutenticarUsuario(email, clave)
         }
         buttonNewUser.setOnClickListener{
-
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
 
         mediaPlayer=MediaPlayer.create(this, R.raw.title_screen)
@@ -120,10 +122,18 @@ class LoginActivity : AppCompatActivity() {
 
     public override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
-        //updateUI(currentUser)
+        if (currentUser != null) {
+            Log.d(EXTRA_LOGIN, "Usuario ya autenticado: ${currentUser.email}")
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra(EXTRA_LOGIN, currentUser.email)
+            startActivity(intent)
+            finish()
+        } else {
+            Log.d(EXTRA_LOGIN, "No hay usuario autenticado.")
+        }
     }
+
 
     private fun LeerDatosDePreferencias(){
         val listadoLeido = manejadorArchivo.ReadInformation()
